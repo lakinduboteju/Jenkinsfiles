@@ -4,14 +4,11 @@
   <remote  name="aosp"
            fetch="https://android.googlesource.com/"
            review="https://android-review.googlesource.com/" />
-  <remote  name="jenkinsfiles"
-           fetch="git@github.com:lakinduboteju/"
-           revision="aosp_android-9.0.0_r39_test" />
   <default revision="refs/tags/android-9.0.0_r39"
            remote="aosp"
            sync-j="4" />
 
-  <!-- <project path="build/make" name="platform/build" groups="pdk" >
+  <project path="build/make" name="platform/build" groups="pdk" >
     <copyfile src="core/root.mk" dest="Makefile" />
     <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
     <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
@@ -19,11 +16,14 @@
     <linkfile src="envsetup.sh" dest="build/envsetup.sh" />
     <linkfile src="target" dest="build/target" />
     <linkfile src="tools" dest="build/tools" />
-  </project> -->
+  </project>
 
   <!-- There were many projects here... I just ignored them all. -->
 
-  <project remote="jenkinsfiles" revision="aosp_android-9.0.0_r39_test" name="Jenkinsfiles.git" path="Jenkinsfiles" >
+  <remote  name="jenkinsfiles"
+           fetch="."
+           revision="aosp_android-9.0.0_r39_test" />
+  <project remote="jenkinsfiles" name="Jenkinsfiles.git" path="Jenkinsfiles" >
     <copyfile src="Jenkinsfile" dest="Jenkinsfile" />
   </project>
 
