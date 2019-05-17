@@ -20,6 +20,4 @@
 
   <!-- There were many projects here... I just ignored them all. -->
 
-  <repo-hooks in-project="platform/tools/repohooks" enabled-list="pre-upload" />
-
 </manifest>
